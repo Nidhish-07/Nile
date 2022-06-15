@@ -22,7 +22,9 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">Nile</a>
+      <div class="p-2 mb-2 bg-secondary text-center">
+        <a class="navbar-brand text-center" href="#">Nile</a>
+      </div>
       <button
         class="navbar-toggler"
         type="button"
@@ -52,7 +54,15 @@
         </ul>
       </div>
     </nav>
-    {% block content %} {% endblock %}
+
+    {% with messages=get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category,message in messages %}
+    <div class="alert alert-{{category}}">
+      <button class="close m1-2 mb-1" type="button" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span></button>
+      {{message}}
+    </div>
+    {% endfor %} {% endif %} {% endwith %} {% block content %} {% endblock %}
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script

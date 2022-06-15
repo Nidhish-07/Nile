@@ -2,16 +2,18 @@
 content %}
 <body class="text-center">
   <div class="container">
-    <h1 class="h2 my-3 font-weight-bold">Please Create your Account</h1>
-    <br />
     <form action="" method="post" class="form-register" style="color: white">
-      {{form.username.label()}} {{form.username(class='form-control w-50 m-auto',
-      placeholder='Username: ')}} {{form.email_address.label()}}
-      {{form.email_address(class='form-control w-50 m-auto', placeholder='Email address:
-      ')}} {{form.password1.label()}} {{form.password1(class='form-control w-50 m-auto',
-      placeholder='Password: ')}} {{form.password2.label()}}
-      {{form.password2(class='form-control w-50 m-auto', placeholder='Confirm Password: ')}}
-<br>
+      {{form.hidden_tag()}}
+      <h1 class="h2 my-3 font-weight-bold">Please Create your Account</h1>
+      <br />
+      {{form.username.label()}} {{form.username(class='form-control w-50
+      m-auto', placeholder='Username: ')}} {{form.email_address.label()}}
+      {{form.email_address(class='form-control w-50 m-auto', placeholder='Email
+      address: ')}} {{form.password1.label()}}
+      {{form.password1(class='form-control w-50 m-auto', placeholder='Password:
+      ')}} {{form.password2.label()}} {{form.password2(class='form-control w-50
+      m-auto', placeholder='Confirm Password: ')}}
+      <br />
       {{form.submit(class="btn btn-lg w-25 btn-primary")}}
     </form>
   </div>
