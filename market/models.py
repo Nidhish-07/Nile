@@ -15,6 +15,14 @@ class User(db.Model):
     def __repr__(self):
         return f'Item {self.name}'
 
+    @property
+    def password(self):
+        return self.password;
+
+    @password.setter
+    def password(self,):
+    
+
 
 class Item(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
